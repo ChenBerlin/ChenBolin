@@ -16,12 +16,13 @@ public class BubbleSort {
         for (int i = 0; i < length; i++) {
             arr[i] = scanner.nextDouble();
         }
+        sort(arr);
         for (int i = 0; i < length; i++) {
-            System.out.print(sort(arr)[i]+" ");
+            System.out.print(arr[i]+" ");
         }
     }
 
-    private static double[] sort(double[] arr) {
+    private static void sort(double[] arr) {
         double temp = 0;
         //记录排好序的个数
         for (int i = 0; i < arr.length-1; i++) {
@@ -36,7 +37,6 @@ public class BubbleSort {
                 }
             }
         }
-        return arr;
     }
 
 }

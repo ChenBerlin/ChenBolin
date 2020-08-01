@@ -16,12 +16,13 @@ public class InsertionSort {
         for (int i = 0; i < length; i++) {
             arr[i] = scanner.nextDouble();
         }
+        sort(arr);
         for (int i = 0; i < length; i++) {
-            System.out.print(sort(arr)[i]+" ");
+            System.out.print(arr[i]+" ");
         }
     }
 
-    private static double[] sort(double[] arr) {
+    private static void sort(double[] arr) {
         //arr[0]已经排好序，从arr[1]开始。
         for (int i = 1; i < arr.length; i++) {
             //取出当前arr[i]的值
@@ -40,6 +41,5 @@ public class InsertionSort {
                 }
             }
         }
-        return arr;
     }
 }

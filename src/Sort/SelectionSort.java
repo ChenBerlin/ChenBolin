@@ -16,12 +16,13 @@ public class SelectionSort {
         for (int i = 0; i < length; i++) {
             arr[i] = scanner.nextDouble();
         }
+        sort(arr);
         for (int i = 0; i < length; i++) {
-            System.out.print(sort(arr)[i]+" ");
+            System.out.print(arr[i]+" ");
         }
     }
 
-    private static double[] sort(double[] arr) {
+    private static void sort(double[] arr) {
         //记录最小值下标
         int index = 0;
         for (int i = 0; i < arr.length-1; i++) {
@@ -38,6 +39,5 @@ public class SelectionSort {
             arr[index] = arr[i];
             arr[i] = temp;
         }
-        return arr;
     }
 }
