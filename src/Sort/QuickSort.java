@@ -4,7 +4,7 @@ import java.util.Scanner;
 //快速排序
 //稳定性：不稳定
 //最佳情况：T(n) = O(nlog n)
-//最差情况：T(n) = O(n2)
+//最差情况：T(n) = O(n^2)
 //平均情况：T(n) = O(nlog n)
 //空间复杂度：
 //平均：O(log n)
