@@ -4,7 +4,11 @@ import java.util.concurrent.*;
 
 public class MyThreadPool {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-
+        //ExecutorService threadPoolExecutor =new ThreadPoolExecutor(corePoolSize,
+        //                maxPoolSize,
+        //                keepAliveTime,
+        //                TimeUnit.MILLISECONDS,
+        //                new LinkedBlockingQueue<Runnable>());
         //线程池参数：
         /*
         * corePoolSize：核心线程数
@@ -35,8 +39,11 @@ public class MyThreadPool {
         //future01.get();
 
         //通过FutureTask提交给线程池
-        FutureTask<Integer> futureTask = new FutureTask<Integer>(new CallableTask<Object>());
-        executorService.submit(futureTask);
+
+        FutureTask<Integer> futureTask01 = new FutureTask<Integer>(new RunnableTask(),0);
+        FutureTask<Integer> futureTask02 = new FutureTask<Integer>(new CallableTask<Object>());
+        executorService.submit(futureTask01);
+        executorService.submit(futureTask02);
 
     }
 
