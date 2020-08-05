@@ -4,7 +4,7 @@ package Practice;
 //在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。
 //知识点：数组
 //思路：一、把numbers[i]依次传入list，传入前调用contains。
-//     二、理论上将i放在numbers[i]的位置，若位置上有值则重复。（空间复杂度O(1)，待实现）
+//     二、理论上将i放在numbers[i]的位置，若位置上有值则重复。（空间复杂度O(1)）
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,22 +31,22 @@ public class JZ50 {
             }
         }
         return false;
-        /*以下方法二代码有BUG
-        Integer num = null;
-        int temp = 0;
-        for (int i = 0; i < numbers.length;i++) {
-            if (numbers[i]==i){
-                continue;
+        /*以下方法二
+        if (numbers == null || length <= 0)
+            return false;
+        int temp;
+        for(int i=0;i<length;i++){
+            while (numbers[i]!=i){
+                if(numbers[i]==numbers[numbers[i]]){
+                    duplication[0] = numbers[i];
+                    return true;
+                }
+                temp=numbers[i];
+                numbers[i]=numbers[temp];
+                numbers[temp]=temp;
             }
-            temp = numbers[i];
-            while (temp!=numbers[numbers[i]]&&i!=temp) {
-                numbers[i] = i;
-                temp = numbers[numbers[i]];
-                numbers[numbers[i]] = numbers[i];
-            }
-            num = temp;
-            break;
         }
-        return num!=null?true:false;*/
+        return false;
+        */
     }
 }
