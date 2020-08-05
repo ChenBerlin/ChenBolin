@@ -2,7 +2,7 @@ package Sort;
 
 import java.util.Scanner;
 
-//冒归并排序
+//归并排序
 //稳定性：稳定
 //最佳情况：T(n) = O(nlog n)
 //最差情况：T(n) = O(nlog n)
