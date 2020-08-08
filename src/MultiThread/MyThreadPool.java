@@ -9,6 +9,8 @@ public class MyThreadPool {
         //                keepAliveTime,
         //                TimeUnit.MILLISECONDS,
         //                new LinkedBlockingQueue<Runnable>());
+        //ctl：running-1<<count_bits、shutdown0<<count_bits、stop1<<count_bits、tidying2<<count_bits、terminated3<<count_bits
+        //worker(){firsttask=task}-->threadfactory(worker)-->runworker(work)-->判断work.firstask-->真正的run()
         //线程池参数：
         /*
         * corePoolSize：核心线程数
@@ -58,11 +60,11 @@ public class MyThreadPool {
 
     private static class CallableTask<T> implements Callable {
         @Override
-        public T call() throws Exception {
+        public Boolean call() throws Exception {
             for (int i = 0; i < 10000; i++) {
                 System.out.println(Thread.currentThread().getName()+"正在输出："+i);
             }
-            return null;
+            return true;
         }
     }
 }
